@@ -1,13 +1,19 @@
 ####################################################Heatmap matrix script#######################################################
 ###Version of R used 4.2.0
-library(readr)
 library(dplyr)
 library(stringr)
 library(tidyr)
-library(tidyverse)library("writexl")
-##Import datasetlibrary(readr)Dataset_Amino_Acid_Mutations <- read_delim("path/Dataset_Amino_Acid_Mutations.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)View(Dataset_Amino_Acid_Mutations)
+library(tidyverse)
+library("writexl")
+##Import dataset
+
+library(readr)
+Dataset_Amino_Acid_Mutations <- read_delim("path/Dataset_Amino_Acid_Mutations.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+View(Dataset_Amino_Acid_Mutations)
+
 ###Remove columns that are not needed
-dfa = subset(Dataset_Amino_Acid_Mutations, select = -c(POS ,REF ,ALT, DP, SB, DP4, IMPACT, FUNCLASS, EFFECT, GENE, CODON, TRID, change, min, max, CH, FC) )###Remove last part of sample name
+dfa = subset(Dataset_Amino_Acid_Mutations, select = -c(POS ,REF ,ALT, DP, SB, DP4, IMPACT, FUNCLASS, EFFECT, GENE, CODON, TRID, change, min, max, CH, FC) )
+###Remove last part of sample name
 Dataset_Amino_Acid_Mutations$Sample <- gsub("_S.*", "", Dataset_Amino_Acid_Mutations$Sample)
 ###Using the variant calling output, create 3 columns thats seperates amino acid mutations in column AA with format A701V into Wildtype (A), position (701) and mutant (V).
 dfa$Wildtype <- str_extract(dfa$AA, "^\\D+")
