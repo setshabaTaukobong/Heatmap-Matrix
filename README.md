@@ -1,4 +1,4 @@
-# Heatmap-Matrix
+# Heatmap Matrix
 A heatmap matrix script that generates a restructured dataframe from a variant calling output file for conditional formatting in Excel. This script is intended for use as a post-processing step after trimming, filtering and variant calling. To ensure reproducibility of results, we have provided a variant calling output file (Dataset-Amino-Acid-Mutations.csv) and a metadata file (SARS_COV_2_analysis_2.xlsx). We have also included the output matrix file (Hetmap of spike region.xlsx) after conditional formatting on Excel, in this repository. 
 
 # Packages to install
