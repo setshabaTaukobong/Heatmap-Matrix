@@ -15,4 +15,4 @@ The heatmap matrix script is entirely written in R (V.4.2.0), but requires prepr
 * LoFreq (https://github.com/CSB5/lofreq)
 
 # Instructions
-After running the dependencies and producing the variant calling file, run the heatmap script on the variant calling file to produce the desired matrix for conditional formatting.
+After running the dependencies and producing the variant calling file, run the heatmap script on the variant calling file (Dataset-Amino-Acid-Mutations.csv) to produce the desired matrix for conditional formatting then merge the matrix to the metadata file (SARS_COV_2_analysis_2.xlsx) by sample name.
